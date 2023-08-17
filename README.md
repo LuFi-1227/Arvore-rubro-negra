@@ -17,3 +17,6 @@ Aqui você vai encontrar um meio de imprimir uma árvore rubro-negra no seu term
 
 **Versão 0.1.1**
 - Adicionada função para imprimir a árvore rubro-negra;
+
+**Versão 0.1.2**
+- Adicionada função para testes dos algoritmos da main;
