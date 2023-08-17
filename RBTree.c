@@ -1,6 +1,12 @@
 #include "RBTree.h"
 #include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
 
+#define Preto "\033[30m"
+#define Vermelho "\033[31m"
+#define RESET "\x1B[0m"
+#define TREE RBtree
 #define BLACK 0
 #define RED 1
 
@@ -144,4 +150,47 @@ void insertRB(Tree * T, int key) {
     }
   }
   RBInsertFix(T, aux3);
+}
+
+void ImprimeKey(TREE *x) {
+  if (x->color)
+    printf(Vermelho "%d\n", x->key);
+  else
+    printf(Preto "%d\n", x->key);
+}
+
+void Terminal(TREE *x, char *prefixo) {
+  if (!x) {
+    printf("Impossível imprimir arvore");
+    return;
+  }
+  char *N_prefixo, *ponteiro, *segmento;
+  TREE *y;
+  if (x->p == NULL) {
+    ImprimeKey(x);
+  } else {
+    if (x->p->r != NULL && x->p->l != NULL && x->p->r != x) {
+      ponteiro = "├── ";
+      segmento = "│   ";
+    } else {
+      ponteiro = "└── ";
+      segmento = "    ";
+    }
+    printf(RESET "%s%s", prefixo,
+           ponteiro); // Aqui eu uso a cor reset, que é branco, padrão do meu
+                      // terminal escuro, caso você seja diferentinho, altere o
+                      // BASH da cor por um de sua preferência, deicei uma
+                      // tabela no fim do código pra ajudar;
+    ImprimeKey(x);
+    N_prefixo = malloc(strlen(prefixo) + strlen(segmento) + 2);
+    sprintf(N_prefixo, "%s%s", prefixo, segmento);
+  }
+  if (x->l != NULL) {
+    y = x->l;
+    Terminal(y, N_prefixo);
+  }
+  if (x->r != NULL) {
+    y = x->r;
+    Terminal(y, N_prefixo);
+  }
 }
