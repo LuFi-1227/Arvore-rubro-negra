@@ -6,7 +6,6 @@
 #define Preto "\033[30m"
 #define Vermelho "\033[31m"
 #define RESET "\x1B[0m"
-#define TREE RBtree
 #define BLACK 0
 #define RED 1
 
@@ -152,20 +151,20 @@ void insertRB(Tree * T, int key) {
   RBInsertFix(T, aux3);
 }
 
-void ImprimeKey(TREE *x) {
+void ImprimeKey(RBtree *x) {
   if (x->color)
     printf(Vermelho "%d\n", x->key);
   else
     printf(Preto "%d\n", x->key);
 }
 
-void Terminal(TREE *x, char *prefixo) {
+void Terminal(RBtree *x, char *prefixo) {
   if (!x) {
     printf("Impossível imprimir arvore");
     return;
   }
   char *N_prefixo, *ponteiro, *segmento;
-  TREE *y;
+  RBtree *y;
   if (x->p == NULL) {
     ImprimeKey(x);
   } else {
