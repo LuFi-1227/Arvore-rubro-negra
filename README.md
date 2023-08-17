@@ -14,3 +14,6 @@ Aqui você vai encontrar um meio de imprimir uma árvore rubro-negra no seu term
 **Versão 0.1.1**
 - Adicionada possibilidade de criar arvore e de inserir nó;
 - Arquivo com os algoritmos adicionados;
+
+**Versão 0.1.1**
+- Adicionada função para imprimir a árvore rubro-negra;
