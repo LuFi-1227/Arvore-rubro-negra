@@ -20,3 +20,7 @@ Aqui você vai encontrar um meio de imprimir uma árvore rubro-negra no seu term
 
 **Versão 0.1.2**
 - Adicionada função para testes dos algoritmos da main;
+
+**Versão 0.1.3**
+- Versão de testes finalizada;
+- Correção de erros e bugs;
