@@ -32,9 +32,10 @@ int main(void){
             system("cls");
             break;
         case 2:
-            Terminal(T->root, "");
-            printf("Digite [enter para continnuar]");
-            scanf("%c");
+            Terminal(T->root);
+            printf("\nDigite [enter para continnuar]\n");
+            getc(stdin);
+            getc(stdin);
             system("cls");
             break;
         case 3:

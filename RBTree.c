@@ -87,6 +87,8 @@ void RBInsertFix(Tree *T, RBtree *z){
           z->p->p->color = RED;
           z = z->p->p;
         } else {
+          free(y);
+          z->p->p->r = NULL;
           if (z == z->p->r) {
             z = z->p;
             LeftRot(T, z);
@@ -111,6 +113,8 @@ void RBInsertFix(Tree *T, RBtree *z){
           z->p->p->color = RED;
           z = z->p->p;
         } else {
+          free(y);
+          z->p->p->l = NULL;
           if (z == z->p->l) {
             z = z->p;
             RightRot(T, z);
@@ -151,41 +155,16 @@ void insertRB(Tree * T, int key) {
   RBInsertFix(T, aux3);
 }
 
-void ImprimeKey(RBtree *x) {
-  if (x->color)
-    printf(Vermelho "%d\n", x->key);
-  else
-    printf(Preto "%d\n", x->key);
-}
-
-void Terminal(RBtree *x, char *prefixo) {
-  if (!x) {
-    printf("Impossível imprimir arvore");
-    return;
+void Terminal(RBtree *root) {
+  if (root != NULL) {
+    if (root->l != NULL)
+      Terminal(root->l);
+    if(root->color == BLACK)
+      printf(Preto "%d, ", root->key);
+    else
+      printf(Vermelho "%d, ", root->key);
+    if (root->r != NULL)
+      Terminal(root->r);
   }
-  char *N_prefixo, *ponteiro, *segmento;
-  RBtree *y;
-  if (x->p == NULL) {
-    ImprimeKey(x);
-  } else {
-    if (x->p->r != NULL && x->p->l != NULL && x->p->r != x) {
-      ponteiro = "|--- ";
-      segmento = "|   ";
-    } else {
-      ponteiro = "|___ ";
-      segmento = "    ";
-    }
-    printf(RESET "%s%s", prefixo, ponteiro); 
-    ImprimeKey(x);
-    N_prefixo = malloc(strlen(prefixo) + strlen(segmento) + 2);
-    sprintf(N_prefixo, "%s%s", prefixo, segmento);
-  }
-  if (x->l != NULL) {
-    y = x->l;
-    Terminal(y, N_prefixo);
-  }
-  if (x->r != NULL) {
-    y = x->r;
-    Terminal(y, N_prefixo);
-  }
+  printf(RESET);
 }
