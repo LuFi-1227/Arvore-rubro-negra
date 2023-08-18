@@ -5,4 +5,37 @@ Aqui você vai encontrar um meio de imprimir uma árvore rubro-negra no seu term
 - Adicionado Cabeçalho do Código;
 - Cabeçalho é exibido por 2 segundos;
 - Cabeçalho é eliminado após exibição;
+<<<<<<< HEAD
 - Uso feito pelo Visual Studio Code com o gcc;
+=======
+<<<<<<< HEAD
+
+=======
+  
+>>>>>>> features
+**Versão 0.1.0**
+- Adicionado Cabeçalho do arquivo RBTree;
+- Adicionado Cabeçalho da função de criar árvore e inserir nó;
+- Nó de uma árvore e nó raíz definidos;
+<<<<<<< HEAD
+=======
+
+**Versão 0.1.1**
+- Adicionada possibilidade de criar arvore e de inserir nó;
+- Arquivo com os algoritmos adicionados;
+
+**Versão 0.1.1**
+- Adicionada função para imprimir a árvore rubro-negra;
+
+**Versão 0.1.2**
+- Adicionada função para testes dos algoritmos da main;
+
+**Versão 0.1.3**
+- Versão de testes finalizada;
+- Correção de erros e bugs;
+
+**Versão 0.1.4**
+- Versão de testes com função de mostrar arvore melhorada;
+- Correção de erros e bugs;
+>>>>>>> features
+>>>>>>> release
