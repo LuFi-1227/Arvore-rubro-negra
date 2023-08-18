@@ -15,5 +15,6 @@ typedef struct {
 
 Tree *createNTree();
 void insertRB(Tree *T, int key);
+
 void Terminal(RBtree *x, char *prefixo);
 #endif

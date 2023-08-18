@@ -169,17 +169,13 @@ void Terminal(RBtree *x, char *prefixo) {
     ImprimeKey(x);
   } else {
     if (x->p->r != NULL && x->p->l != NULL && x->p->r != x) {
-      ponteiro = "├── ";
-      segmento = "│   ";
+      ponteiro = "|--- ";
+      segmento = "|   ";
     } else {
-      ponteiro = "└── ";
+      ponteiro = "|___ ";
       segmento = "    ";
     }
-    printf(RESET "%s%s", prefixo,
-           ponteiro); // Aqui eu uso a cor reset, que é branco, padrão do meu
-                      // terminal escuro, caso você seja diferentinho, altere o
-                      // BASH da cor por um de sua preferência, deicei uma
-                      // tabela no fim do código pra ajudar;
+    printf(RESET "%s%s", prefixo, ponteiro); 
     ImprimeKey(x);
     N_prefixo = malloc(strlen(prefixo) + strlen(segmento) + 2);
     sprintf(N_prefixo, "%s%s", prefixo, segmento);
