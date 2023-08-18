@@ -24,3 +24,7 @@ Aqui você vai encontrar um meio de imprimir uma árvore rubro-negra no seu term
 **Versão 0.1.3**
 - Versão de testes finalizada;
 - Correção de erros e bugs;
+
+**Versão 0.1.4**
+- Versão de testes com função de mostrar arvore melhorada;
+- Correção de erros e bugs;
